@@ -5,8 +5,7 @@ class Zoo {
       this._establishedDate = establishedDate
       this._ticketPrice = ticketPrice
       this._workers = workers
-      this._animals = animals
-      
+      this._animals = animals    
   }
   
   get address(){
@@ -49,18 +48,27 @@ class Zoo {
     }
   }
   
-   addWorker (worker) {
-   
-    for (i= 0; i < Worker.workers.lenght; i++ ) {
-      Worker.workers.unshift(worker)
-    }
+  addWorker(value) {
+    this._workers.push(value)
+  }
+
+  removeWorker(index) {
+    this._workers.splice(index, 1)
+  }
+
+  editWorkers(index) {
+    this._workers[index]
   }
   
-  removeWorker (worker) {
-    return  Worker.workers.filter(item => item !== worker)
+  addAnimal(value) {
+    this._animals.push(value)
   }
-  
-  //add/remove/edit animal
+  removeAnimal(index) {
+    this._animals.splice(index, 1)
+  }
+  editAnimals(index) {
+    this._animals[index]
+  }
   
   showAllAnimals () {
     console.log(Animal.animals)
@@ -76,9 +84,7 @@ class Zoo {
   showAllWorkers () {
     console.log(Worker.workers)
   }
-  
   }
-  
   
   class Animal {
     constructor(type, color, weight, height, placeOfOrigin){
@@ -87,7 +93,6 @@ class Zoo {
       this._weight = weight
       this._height = height
       this._placeOfOrigin = placeOfOrigin
-      this.animals = []
   }
   
   get animalInfo(){
@@ -108,8 +113,6 @@ class Zoo {
         console.log('Wrong weight')
     }
   }
-  
-  
   }
   
   class Snakes  extends Animal {
@@ -134,8 +137,10 @@ class Zoo {
   }
   
   class Worker {
-    constructor(firstName, lastName, phone){
-      this.workers = []
+    constructor(firstName, lastName, phone) {
+      this._firstName = firstName;
+      this._lastName = lastName;
+      this._phone = phone;
     }
   }
   
