@@ -12,4 +12,4 @@ dataFromJson.forEach((el) => {
 });
 console.log(dataFromJsonUpdatedArr.length);
 
-fs.writeFileSync("dataNew.json", JSON.stringify(dataFromJsonUpdatedArr));
+fs.writeFileSync("data2Updated.json", JSON.stringify(dataFromJsonUpdatedArr));
