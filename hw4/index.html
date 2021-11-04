@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+function setParams(from, to, amount) {
+const access_key = '1412c008416813e4c44df80a30838500';
+return url = `https://api.exchangeratesapi.io/v1/convert?access_key=${ access_key }&from=${ from }&to=${ to }&amount=${ amount }`;
+}
+
+// promises
+
+
+fetch(setParams('USD', 'EUR', 10))
+ .then(response => response.json())
+ .then(data => {
+
+   if (data.error) {
+     console.log('Error:', data.error);
+     return;
+   }
+
+   //console.log('Success:', data);
+   console.log('Converted amount: ' + data.result);
+ })
+ .catch((error) => {
+   console.error('Error:', error);
+ });
+
+
+ //async/await
+
+
+(async () => {
+  try {
+    const res = await fetch(setParams('USD', 'EUR', 10));
+
+    if (res.status >= 400) {
+      throw new Error("Bad response from server");
+    }
+
+    const data = await res.json();
+
+    console.log(data.result);
+  } catch (err) {
+    console.error(err);
+  }
+})();
+
+
+        </script>
+        <title>Document</title>
+      </head>
+      <body>
+        <div id="root"></div>
+      </body>
+    </html>
+       
+       
