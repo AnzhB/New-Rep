@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import fetch from 'node-fetch'
+// imports should be commented to run lite-server via npm run serve
 
 //promises
 
