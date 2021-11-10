@@ -1,0 +1,36 @@
+
+1
+//*[@id="submit"]
+#submit
+
+2 
+//*[@class="txt"]
+.txt
+
+3
+//*[@class="txt"][last()-3] //*[@class="txt"][1]
+.txt:nth-of-type(1)
+
+4
+//*[text()='Remove comment']
+
+5
+//*[contains(@class,'one')]
+.one
+
+6
+//*[@ multitag2 ="on"]
+[multitag2 = on]
+
+7
+//div[@class="content"]/*
+.content > *
+
+8
+//div[@class="content"]//button | span
+.content button
+
+9
+//*[@id='submit']/../../..
+//*[@id='submit']//ancestor::div/..
+
