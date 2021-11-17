@@ -1,3 +1,13 @@
+Открыть в браузере файл ./selectors/index.html и подобрать селекторы:
+Xpath/CSS: элемент с id - ‘submit
+Xpath/CSS: все элементы с классом ‘txt’
+Xpath: первый элемент с классом ‘txt’
+Xpath: кнопку которая содержит текст: ‘Remove comment’
+Xpath: первый элемент с классом ‘one’
+Xpath/CSS: элемент с атрибутом ‘multitag2’ и значением  ‘on’
+Xpath: всех детей элемента ‘div’ с классом ‘content’
+Xpath: все элементы ‘span’ и  ‘button’ с классом ‘content’
+Xpath: используя за основу селектор //*[@id='submit'] найти элемент body
 
 1
 //*[@id="submit"]
@@ -12,7 +22,7 @@
 .txt:nth-of-type(1)
 
 4
-//*[text()='Remove comment']
+//*[text()='Remove comment'] //button[contains(text(),'Remove comment')] 
 
 5
 //*[contains(@class,'one')]
